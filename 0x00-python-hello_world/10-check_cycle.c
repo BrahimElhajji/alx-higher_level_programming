@@ -9,10 +9,13 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t quick, *lazy;
+	listint_t *quick, *lazy;
 
 	if (list == NULL || list->next == NULL)
 		return (0);
+
+	lazy = list->next;
+	quick = list->next->next;
 
 	while (lazy && quick && quick->next)
 	{
