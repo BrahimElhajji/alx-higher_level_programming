@@ -2,4 +2,4 @@
 
 class Square(object):
     """ an empty calss for square"""
-        pass
+    pass
