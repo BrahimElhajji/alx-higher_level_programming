@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+""" class for square"""
+
 class Square(object):
-    """ an empty calss for square"""
+    """ an empty class for square"""
     pass
