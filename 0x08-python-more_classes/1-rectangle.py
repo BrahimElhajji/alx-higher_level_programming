@@ -6,12 +6,12 @@ class Rectangle():
     """A class representing a rectangle."""
 
     def __init__(self, width=0, height=0):
-    """Attributes:
+        """Attributes:
         width: is The width of the rectangle.
         height: is The height of the rectangle."""
 
-            self.height = height
-            self.width = width
+        self.height = height
+        self.width = width
 
     @property
     def height(self):
@@ -42,3 +42,4 @@ class Rectangle():
             raise ValueError("idth must be >= 0")
         else:
             self.__width = width
+
