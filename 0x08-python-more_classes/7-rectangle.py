@@ -28,7 +28,7 @@ class Rectangle():
         else:
             return (self.__width + self.__height) * 2
 
-    @property 
+    @property
     def height(self):
         """Getter method for the height attribute."""
         return self.__height
