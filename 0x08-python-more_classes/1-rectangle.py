@@ -9,24 +9,8 @@ class Rectangle():
         """Attributes:
         width: is The width of the rectangle.
         height: is The height of the rectangle."""
-
-        self.height = height
         self.width = width
-
-    @property
-    def height(self):
-        """Getter method for the height attribute."""
-        return self.__height
-
-    @height.setter
-    def height(self, height):
-        """Setter method for the height attribute."""
-        if not isinstance(height, int):
-            raise TypeError("width must be an integer")
-        if height < 0:
-            raise ValueError("idth must be >= 0")
-        else:
-            self.__height = height
+        self.height = height
 
     @property
     def width(self):
@@ -43,3 +27,17 @@ class Rectangle():
         else:
             self.__width = width
 
+    @property
+    def height(self):
+        """Getter method for the height attribute."""
+        return self.__height
+
+    @height.setter
+    def height(self, height):
+        """Setter method for the height attribute."""
+        if not isinstance(height, int):
+            raise TypeError("width must be an integer")
+        if height < 0:
+            raise ValueError("idth must be >= 0")
+        else:
+            self.__height = height
