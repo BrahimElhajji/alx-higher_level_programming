@@ -1,14 +1,17 @@
-#!/bin/usr/python3
-"""A class representing a rectangle."""
+#!/usr/bin/python3
+"""Empty class"""
+
 
 class Rectangle():
+    """A class representing a rectangle."""
 
-    """Attributes:
-        width: is The width of the rectangle.
-        height: is The height of the rectangle."""
     number_of_instances = 0
 
     def __init__ (self, width=0, height=0):
+        """Attributes:
+        width: is The width of the rectangle.
+        height: is The height of the rectangle."""
+
         self.height = height
         self.width = width
         Rectangle.number_of_instances += 1
