@@ -8,7 +8,7 @@ class Rectangle():
     number_of_instances = 0
     print_symbol = "#"
 
-    def __init__ (self, width=0, height=0):
+    def __init__(self, width=0, height=0):
         """Attributes:
         width: is The width of the rectangle.
         height: is The height of the rectangle."""
@@ -16,7 +16,6 @@ class Rectangle():
         self.height = height
         self.width = width
         Rectangle.number_of_instances += 1
-
 
     def area(self):
         """Calculates the area of the rectangle."""
@@ -29,20 +28,20 @@ class Rectangle():
         else:
             return (self.__width + self.__height) * 2
 
-    @property    
+    @property
     def height(self):
         """Getter method for the height attribute."""
         return self.__height
 
     @height.setter
-    def height(self, height):
+    def height(self, value):
         """Setter method for the height attribute."""
-        if not isinstance(height, int):
-            raise TypeError("width must be an integer")
-        if height < 0:
-            raise ValueError("idth must be >= 0")
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value < 0:
+            raise ValueError("height must be >= 0")
         else:
-            self.__height = height
+            self.__height = value
 
     @property
     def width(self):
@@ -50,17 +49,17 @@ class Rectangle():
         return self.__width
 
     @width.setter
-    def width(self, width):
+    def width(self, value):
         """Setter method for the height attribute."""
-        if not isinstance(width, int):
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
-        if width < 0:
-            raise ValueError("idth must be >= 0")
+        if value < 0:
+            raise ValueError("width must be >= 0")
         else:
-            self.__width = width
+            self.__width = value
 
     def __str__(self):
-        """create a string represent the rectangle 
+        """create a string represent the rectangle
         using the character '#'."""
         if self.__width == 0 or self.__height == 0:
             return ""
@@ -71,7 +70,7 @@ class Rectangle():
             return rectangle_str.rstrip('\n')
 
     def __repr__(self):
-        """create a string that represent the rectangle 
+        """create a string that represent the rectangle
         for recreating a new instance using eval()."""
         rec = f"Rectangle(width={self.__width}, height={self.__height})"
         return rec
