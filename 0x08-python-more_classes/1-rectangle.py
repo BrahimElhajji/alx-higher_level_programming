@@ -1,17 +1,18 @@
 #!/bin/usr/python3
 """A class representing a rectangle."""
 
+
 class Rectangle():
 
     """Attributes:
         width: is The width of the rectangle.
         height: is The height of the rectangle."""
 
-    def __init__ (self, width=0, height=0):
+    def __init__(self, width=0, height=0):
         self.height = height
         self.width = width
 
-    @property    
+    @property
     def height(self):
         """Getter method for the height attribute."""
         return self.__height
