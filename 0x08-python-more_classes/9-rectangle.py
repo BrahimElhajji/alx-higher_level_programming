@@ -13,8 +13,8 @@ class Rectangle():
         width: is The width of the rectangle.
         height: is The height of the rectangle."""
 
-        self.height = height
         self.width = width
+        self.height = height
         Rectangle.number_of_instances += 1
 
     def area(self):
