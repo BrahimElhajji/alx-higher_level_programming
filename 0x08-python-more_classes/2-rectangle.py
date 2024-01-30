@@ -5,14 +5,12 @@
 class Rectangle():
     """A class representing a rectangle."""
 
-    def __init__ (self, width=0, height=0):
+    def __init__(self, width=0, height=0):
         """Attributes:
         width: is The width of the rectangle.
         height: is The height of the rectangle."""
-
         self.height = height
         self.width = width
-
 
     def area(self):
         """Calculates the area of the rectangle."""
@@ -25,7 +23,7 @@ class Rectangle():
         else:
             return (self.__width + self.__height) * 2
 
-    @property    
+    @property
     def height(self):
         """Getter method for the height attribute."""
         return self.__height
