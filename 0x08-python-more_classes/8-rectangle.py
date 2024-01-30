@@ -50,7 +50,7 @@ class Rectangle():
 
     @width.setter
     def width(self, value):
-        """Setter method for the height attribute."""
+        """Setter method for the width attribute."""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -87,15 +87,12 @@ class Rectangle():
         """
         Static method that returns the rectangle with the larger area.
         """
-        area_1 = rect_1.area()
-        area_2 = rect_2.area()
-
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
         if not isinstance(rect_2, Rectangle):
             raise TypeError("rect_2 must be an instance of Rectangle")
 
-        if area_1 >= area_2:
+        if rect_1.area() >= rect_2.area():
             return rect_1 
         else:
             return rect_2
