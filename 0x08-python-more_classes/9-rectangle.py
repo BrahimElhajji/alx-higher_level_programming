@@ -72,8 +72,7 @@ class Rectangle():
     def __repr__(self):
         """create a string that represent the rectangle
         for recreating a new instance using eval()."""
-        rec = f"Rectangle(width={self.__width}, height={self.__height})"
-        return rec
+        return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
         """
@@ -104,4 +103,4 @@ class Rectangle():
         instan with equal width and height.
         """
 
-        return Rectangle(size, size)
+        return cls(size, size)
