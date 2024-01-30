@@ -103,4 +103,4 @@ class Rectangle():
         instan with equal width and height.
         """
 
-        return cls(width=size, height=size)
+        return cls(height=size, width=size)
