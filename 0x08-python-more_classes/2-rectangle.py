@@ -1,13 +1,15 @@
 #!/bin/usr/python3
-"""A class representing a rectangle."""
+"""Empty class."""
+
 
 class Rectangle():
+    """A class representing a rectangle."""
 
-    """Attributes:
+    def __init__ (self, width=0, height=0):
+        """Attributes:
         width: is The width of the rectangle.
         height: is The height of the rectangle."""
 
-    def __init__ (self, width=0, height=0):
         self.height = height
         self.width = width
 

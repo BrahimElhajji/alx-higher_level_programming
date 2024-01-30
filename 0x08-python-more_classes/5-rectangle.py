@@ -1,15 +1,17 @@
 #!/bin/usr/python3
-"""A class representing a rectangle."""
+"""Empty class"""
+
 
 class Rectangle():
-
-    """Attributes:
-        width: is The width of the rectangle.
-        height: is The height of the rectangle."""
+    """A class representing a rectangle."""
 
     def __init__ (self, width=0, height=0):
-        self.height = height
-        self.width = width
+        """Attributes:
+            width: is The width of the rectangle.
+            height: is The height of the rectangle."""
+
+            self.height = height
+            self.width = width
 
 
     def area(self):
