@@ -21,4 +21,4 @@ def say_my_name(first_name, last_name=""):
     else:
         full_name = first_name
 
-    print("My name is {:s}".format(full_name))
+    print("My name is {:s} ".format(full_name))
