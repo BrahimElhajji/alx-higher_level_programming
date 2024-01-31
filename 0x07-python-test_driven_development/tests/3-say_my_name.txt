@@ -1,0 +1,44 @@
+
+This modules defines a function ``say_my_name(first_name, last_name="")``.
+
+``say_my_name(...)`` prints "My name is <first_name> <last_name>".
+
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+    Print the full name using the provided first and last names.
+
+    Parameters:
+    - first_name (str): The first name.
+    - last_name (str, optional): The last name. Defaults to an empty string.
+
+    Example:
+    >>> say_my_name("John", "Smith")
+    My name is John Smith
+
+    >>> say_my_name("Walter", "White")
+    My name is Walter White
+
+    >>> say_my_name("Bob")
+    My name is Bob
+
+    >>> try:
+    ...     say_my_name(12, "White")
+    ... except TypeError as e:
+    ...     str(e)
+    'first_name must be a string'
+
+    >>> say_my_name("Alice", "Johnson")
+    My name is Alice Johnson
+
+    >>> say_my_name("Eva", "")
+    My name is Eva
+
+    >>> try:
+    ...     say_my_name("Mike", 42)
+    ... except TypeError as e:
+    ...     str(e)
+    'last_name must be a string'
+
+    >>> say_my_name("", "Doe")
+    My name is  Doe

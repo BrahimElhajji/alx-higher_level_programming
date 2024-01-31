@@ -1,0 +1,113 @@
+# Test cases for add_integer function
+
+Basic Tests
+-------------------
+
+Import add_integer from the 0-add_integer module:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+No Arguments:
+
+   >>> add_integer()
+   Traceback (most recent call last):
+   TypeError: add_integer() missing 1 required positional argument: 'a'
+
+One Argument:
+
+   >>> add_integer(1)
+   99
+
+   >>> add_integer(-1)
+   97
+
+Two Integers:
+
+   >>> add_integer(3, 2)
+   5
+
+   >>> add_integer(-5, -3)
+   -8
+
+Combination of Integer and Float:
+
+   >>> add_integer(1.5, 3)
+   4
+
+   >>> add_integer(5, 0.0)
+   5
+
+Two Floats:
+
+   >>> add_integer(1.8, 2.3)
+   3
+
+   >>> add_integer(-3.5, -2.5)
+   -5
+
+Float Overflow:
+
+   >>> add_integer(float('inf'), float('inf'))
+   ... # doctest: +ELLIPSIS
+   Traceback (most recent call last):
+   OverflowError: ...
+
+   >>> add_integer(-float('inf'), -float('inf'))
+   ... # doctest: +ELLIPSIS
+   Traceback (most recent call last):
+   OverflowError: ...
+
+Float NaN:
+
+   >>> add_integer(float('nan'), 3.1)
+   Traceback (most recent call last):
+   ValueError: cannot convert float NaN to integer
+
+   >>> add_integer(-5, float('nan'))
+   Traceback (most recent call last):
+   ValueError: cannot convert float NaN to integer
+
+Invalid Data Types:
+
+   >>> add_integer("This", (1)) #doctest: +ELLIPSIS
+   Traceback (most recent call last):
+   TypeError:...
+
+   >>> add_integer([1, 2], 5) #doctest: +ELLIPSIS
+   Traceback (most recent call last):
+   TypeError:...
+
+Combination with Integer and Non-Integer:
+
+   >>> add_integer(4, "Not") #doctest: +ELLIPSIS
+   Traceback (most recent call last):
+   TypeError:...
+
+   >>> add_integer((1, 4), 5) #doctest: +ELLIPSIS
+   Traceback (most recent call last):
+   TypeError:...
+
+Combination with Float and Non-Integer:
+
+   >>> add_integer(4.6, "Not") #doctest: +ELLIPSIS
+   Traceback (most recent call last):
+   TypeError:...
+
+   >>> add_integer((1, 4), 5.3) #doctest: +ELLIPSIS
+   Traceback (most recent call last):
+   TypeError:...
+
+Positive and Negative Mix:
+
+   >>> add_integer(10, -5.2)
+   5
+
+   >>> add_integer(-10, 5.2)
+   -5
+
+Zero Values:
+
+   >>> add_integer(0, 0.0)
+   0
+
+   0
