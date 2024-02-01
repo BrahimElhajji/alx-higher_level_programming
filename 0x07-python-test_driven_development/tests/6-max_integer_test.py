@@ -38,6 +38,11 @@ class TestMaxInteger(unittest.TestCase):
         output = max_integer()
         self.assertIsNone(output)
 
+    def test_max_at_beginning(self):
+        numbers = [99, 10, 5, 3, 8]
+        output = max_integer(numbers)
+        self.assertEqual(output, 99)
+
     def test_invalid_input(self):
         with self.assertRaises(TypeError):
             max_integer(1, "lovely")
