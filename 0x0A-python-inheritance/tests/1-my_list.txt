@@ -26,11 +26,39 @@ A custom list class that inherits the built-in list.
     >>> single_element_list.print_sorted()
     [42]
 
-    >>> duplicate_elements = MyList([3, 4, 1, 5, 9, 6, 5, 3, 9, 1])
+    >>> duplicate_elements = MyList([3, 1, 4, 5, 9, 6, 5, 3, 9, 1])
     >>> duplicate_elements.print_sorted()
     [1, 1, 3, 3, 4, 5, 5, 6, 9, 9]
 
+    >>> max_integer_list = MyList([3, 1, 4, 5, 9, 6, 3, 5, 2**31 - 1])
+    >>> max_integer_list.print_sorted()
+    [1, 3, 3, 4, 5, 5, 6, 9, 2147483647]
 
-    >>> negative_numbers = MyList([-5, 0, 10, -3, 7])
-    >>> negative_numbers.print_sorted()
-    [-5, -3, 0, 7, 10]
+    >>> same_elements_list = MyList([5, 5, 5, 5, 5])
+    >>> same_elements_list.print_sorted()
+    [5, 5, 5, 5, 5]
+
+    >>> repeat_element_list = MyList([3, 4, 1, 5, 9, 6, 3, 5, 9, 1, 4, 4,])
+    >>> repeat_element_list.print_sorted()
+    [1, 1, 3, 3, 4, 4, 4, 5, 5, 6, 9, 9]
+
+    >>> negative_values_list = MyList([-5, 0, -10, -3, -7])
+    >>> negative_values_list.print_sorted()
+    [-10, -7, -5, -3, 0]
+
+    >>> infinite_integer_list = MyList([3, 1, 4, 9, 6, 5, 3, 5, float('inf')])
+    >>> infinite_integer_list.print_sorted()
+    [1, 3, 3, 4, 5, 5, 6, 9, inf]
+
+    >>> zero_values_list = MyList([0, 0, 0, 0, 0])
+    >>> zero_values_list.print_sorted()
+    [0, 0, 0, 0, 0]
+
+    >>> add_items_list = MyList([3, 1, 4, 5, 9])
+    >>> add_items_list.append(2)
+    >>> add_items_list.print_sorted()
+    [1, 2, 3, 4, 5, 9]
+
+    >>> positive_integers_list = MyList([10, 20, 30, 40, 50])
+    >>> positive_integers_list.print_sorted()
+    [10, 20, 30, 40, 50]
