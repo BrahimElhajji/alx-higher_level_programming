@@ -1,69 +1,165 @@
-A custom list class that inherits the built-in list.
+How to Use my_list_module.py
+============================
 
-    Usage:
-    >>> MyList = __import__('1-my_list').MyList
-    >>> my_list = MyList([1, 4, 1, 5, 9, 2, 6, 3, 5])
-    >>> my_list.print_sorted()
-    [1, 1, 2, 3, 4, 5, 5, 6, 9]
+This module defines a class ``MyList`` that inherits from ``list``.
 
-    Attributes:
-    - Inherits all attributes and methods from the built-in list.
+Instantiation
+=============
 
-    Methods:
-    - print_sorted(): Prints the elements of the list in sorted order.
+``MyList`` can be instantiated with no arguments, returning an empty list:
 
-    Example:
-    >>> custom_list = MyList([10, 7, 3, 5, 8])
-    >>> custom_list.print_sorted()
-    [3, 5, 7, 8, 10]
+::
 
-    Additional Test Cases:
-    >>> empty_list = MyList([])
-    >>> empty_list.print_sorted()
+    >>> MyList = __import__('my_list_module').MyList
+    >>> custom_list = MyList()
+    >>> type(custom_list)
+    <class 'my_list_module.MyList'>
+
+::
+
+    >>> print(custom_list)
     []
 
-    >>> single_element_list = MyList([42])
-    >>> single_element_list.print_sorted()
-    [42]
+Or with a single argument, which must be an iterable object.
 
-    >>> duplicate_elements = MyList([3, 1, 4, 5, 9, 6, 5, 3, 9, 1])
-    >>> duplicate_elements.print_sorted()
-    [1, 1, 3, 3, 4, 5, 5, 6, 9, 9]
-    
-    >>> my_list.append(None)
-    >>> my_list.print_sorted()
+::
+
+    >>> custom_list = MyList([1, 2, 3])
+    >>> print(custom_list)
+    [1, 2, 3]
+
+::
+
+    >>> custom_list = MyList(None)
     Traceback (most recent call last):
-    TypeError: '<' not supported between instances of 'NoneType' and 'int'
+    TypeError: 'NoneType' object is not iterable
 
-    >>> max_integer_list = MyList([3, 1, 4, 5, 9, 6, 3, 5, 2**31 - 1])
-    >>> max_integer_list.print_sorted()
-    [1, 3, 3, 4, 5, 5, 6, 9, 2147483647]
 
-    >>> same_elements_list = MyList([5, 5, 5, 5, 5])
-    >>> same_elements_list.print_sorted()
-    [5, 5, 5, 5, 5]
+A ``TypeError`` will be raised for any more than one instantiation argument.
 
-    >>> repeat_element_list = MyList([3, 4, 1, 5, 9, 6, 3, 5, 9, 1, 4, 4,])
-    >>> repeat_element_list.print_sorted()
-    [1, 1, 3, 3, 4, 4, 4, 5, 5, 6, 9, 9]
+::
 
-    >>> negative_values_list = MyList([-5, 0, -10, -3, -7])
-    >>> negative_values_list.print_sorted()
-    [-10, -7, -5, -3, 0]
+    >>> custom_list = MyList([1, 2], [3, 4])
+    Traceback (most recent call last):
+    TypeError: list() takes at most 1 argument (2 given)
 
-    >>> infinite_integer_list = MyList([3, 1, 4, 9, 6, 5, 3, 5, float('inf')])
-    >>> infinite_integer_list.print_sorted()
-    [1, 3, 3, 4, 5, 5, 6, 9, inf]
+Usage
+=====
 
-    >>> zero_values_list = MyList([0, 0, 0, 0, 0])
-    >>> zero_values_list.print_sorted()
-    [0, 0, 0, 0, 0]
+``MyList`` is an inherited ``list`` class, and thus features the same methods.
+For instance, elements can be added to a ``MyList`` with the ``append()`` method.
 
-    >>> add_items_list = MyList([3, 1, 4, 5, 9])
-    >>> add_items_list.append(2)
-    >>> add_items_list.print_sorted()
-    [1, 2, 3, 4, 5, 9]
+::
 
-    >>> positive_integers_list = MyList([10, 20, 30, 40, 50])
-    >>> positive_integers_list.print_sorted()
-    [10, 20, 30, 40, 50]
+    >>> custom_list = MyList()
+    >>> custom_list.append(3)
+    >>> custom_list.append(6)
+    >>> custom_list.append(9)
+    >>> print(custom_list)
+    [3, 6, 9]
+
+Replaced with indexing:
+
+::
+
+    >>> custom_list[0] = 5
+    >>> print(custom_list)
+    [3, 6, 9]
+
+And removed with the ``remove()`` method.
+
+::
+
+    >>> custom_list.remove(5)
+    >>> print(custom_list)
+    [7, 4]
+
+See the documentation on Python lists for more built-in methods.
+
+``print_sorted`` Method
+=======================
+
+``MyList`` implements a single method - a public instance method
+``print_sorted(self)``.
+
+::
+
+    >>> custom_list = MyList()
+    >>> print(custom_list.print_sorted)
+    <bound method MyList.print_sorted of []>
+
+The method takes no arguments - a TypeError will be raised if an argument is
+provided.
+
+::
+
+    >>> custom_list.print_sorted(1)
+    Traceback (most recent call last):
+    TypeError: print_sorted() takes 1 positional argument but 2 were given
+
+The method prints the list in ascending sorted order.
+
+::
+
+    >>> custom_list.append(1)
+    >>> custom_list.append(4)
+    >>> custom_list.append(2)
+    >>> custom_list.append(3)
+    >>> custom_list.append(5)
+    >>> print(custom_list)
+    [1, 4, 2, 3, 5]
+
+::
+
+    >>> custom_list.print_sorted()
+    [1, 2, 3, 4, 5]
+
+The order of the original list is not altered after a call to the method.
+
+::
+
+    >>> print(custom_list)
+    [1, 2, 6, 3, 5]
+
+Note that lists of strings are sorted lexographically.
+
+::
+
+    >>> custom_list = MyList()
+    >>> custom_list.append("Banana")
+    >>> custom_list.append("lovely")
+    >>> custom_list.append("anfa")
+    >>> custom_list.append("Python")
+    >>> custom_list.append("kechkech")
+    >>> print(custom_list)
+    ['Banana', 'lovely', 'anfa', 'Python', 'kechkech']
+
+::
+
+    >>> custom_list.print_sorted()
+    ['kechkech', 'Banana', 'Python', 'lovely', 'anfa']
+
+Another friendly reminder that the original list is unaltered :)
+
+::
+
+    >>> print(custom_list)
+    ['Banana', 'lovely', 'anfa', 'Python', 'kechkech']
+
+Nothing to sort with empty lists.
+
+::
+
+    >>> custom_list = MyList()
+    >>> custom_list.print_sorted()
+    []
+
+If ``print_sorted(...)`` is called on a list of different types, a TypeError
+will be raised.
+
+::
+
+    >>> custom_list = MyList([1, "kechkech", "Python", 8])
+    >>> custom_list.print_sorted()
+    Traceback (most recent call last):
+    TypeError: unorderable types: str() < int()
