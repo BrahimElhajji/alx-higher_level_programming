@@ -1,0 +1,36 @@
+How to use test_base_geometry.txt
+=================================
+
+This file provides doctests for the BaseGeometry class.
+
+>>> BaseGeometry = __import__('1-my_list').BaseGeometry
+
+Create an instance of BaseGeometry:
+>>> geometry = BaseGeometry()
+
+Try calling the area() method:
+>>> geometry.area()
+Traceback (most recent call last):
+  ...
+Exception: area() is not implemented
+
+Try using the integer_validator method with valid input:
+>>> geometry.integer_validator("side_length", 5)
+
+Try using the integer_validator method with a non-integer value:
+>>> geometry.integer_validator("side_length", "invalid")
+Traceback (most recent call last):
+  ...
+TypeError: side_length must be an integer
+
+Try using the integer_validator method with a negative value:
+>>> geometry.integer_validator("side_length", -5)
+Traceback (most recent call last):
+  ...
+ValueError: side_length must be greater than 0
+
+Try using the integer_validator method with a zero value:
+>>> geometry.integer_validator("side_length", 0)
+Traceback (most recent call last):
+  ...
+ValueError: side_length must be greater than 0
