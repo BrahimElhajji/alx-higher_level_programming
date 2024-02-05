@@ -1,3 +1,10 @@
+How to use test_base_geometry.txt
+=================================
+
+This file provides doctests for the BaseGeometry class.
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
 Create an instance of BaseGeometry:
 >>> geometry = BaseGeometry()
 
