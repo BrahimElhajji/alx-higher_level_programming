@@ -167,3 +167,4 @@ integer_validator method dic:
 >>> geometry.integer_validator("Foo", {1, 2})
 Traceback (most recent call last):
   TypeError: Foo must be an integer
+
