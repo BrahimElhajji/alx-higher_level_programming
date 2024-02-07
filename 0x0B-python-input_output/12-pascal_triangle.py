@@ -10,7 +10,7 @@ def pascal_triangle(n):
 
     pascal = [[1]]
     for i in range(1, n):
-        old_row = triangle[-1]
+        old_row = pascal[-1]
         new_row = [1]
         for j in range(1, i):
             new_row.append(old_row[j - 1] + old_row[j])
