@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Class Rctangle Module that imports from Base Module"""
+"""Class Rctangle Module that inherits Base Module"""
 from models.base import Base
 
 
