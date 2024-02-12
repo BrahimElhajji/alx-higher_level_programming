@@ -4,6 +4,7 @@ from models.base import Base
 
 
 class Rectangle(Base):
+    """Rectangle Class"""
     def integer_validator(self, name, value):
         """a validation function for height and width"""
         if type(value) is not int:
