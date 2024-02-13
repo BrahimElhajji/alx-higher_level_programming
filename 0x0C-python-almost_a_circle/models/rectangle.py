@@ -93,15 +93,15 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
                 self.id, self.x, self.y, self.width, self.height)
 
-        def update(self, *args, **kwargs):
-             """function that assigns an argument to each attribute"""
-             if args:
-                 list_args = ['id', 'width', 'height', 'x', 'y']
-                 for arg in range(len(args)):
-                     setattr(self, list_args[arg], args[arg])
-            else:
-                for key, value in kwargs.items():
-                    setattr(self, key, value)
+    def update(self, *args, **kwargs):
+        """function that assigns an argument to each attribute"""
+        if args:
+            list_args = ['id', 'width', 'height', 'x', 'y']
+            for arg in range(len(args)):
+                setattr(self, list_args[arg], args[arg])
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
 
     def to_dictionary(self):
         """function that returns the dictionary
