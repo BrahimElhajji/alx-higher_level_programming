@@ -46,10 +46,11 @@ class Base:
         """Function that returns an instance
         with all attributes set from the provided dictionary"""
         if cls.__name__ == "Rectangle":
-            dummy_instance = cls(5, 5)
+            dummy_instance = cls(10, 10)
         elif cls.__name__ == "Square":
-            dummy_instance = cls(5)
-
+            dummy_instance = cls(10)
+        else:
+            dummy_instance = None
         dummy_instance.update(**dictionary)
         return dummy_instance
 
