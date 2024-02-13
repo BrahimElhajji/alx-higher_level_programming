@@ -4,7 +4,9 @@ from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
+    """Square Class"""
     def __init__(self, size, x=0, y=0, id=None):
+        """function that initialize instances"""
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
@@ -12,7 +14,7 @@ class Square(Rectangle):
         return "[Square] ({}) {}/{} - {}".format(
                 self.id, self.x, self.y, self.height)
 
-        @property
+    @property
     def size(self):
         """Getter method for size attribute."""
         return self.height
