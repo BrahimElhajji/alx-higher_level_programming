@@ -95,7 +95,7 @@ class Rectangle(Base):
 
         def update(self, *args, **kwargs):
             """function that assigns an argument to each attribute"""
-        if args:
+             if args:
             if len(args) >= 1:
                 self.id = args[0]
             if len(args) >= 2:
@@ -106,7 +106,7 @@ class Rectangle(Base):
                 self.x = args[3]
             if len(args) >= 5:
                 self.y = args[4]
-        if kwargs:
+        elif kwargs:
             for key, value in kwargs.items():
                 setattr(self, key, value)
 
