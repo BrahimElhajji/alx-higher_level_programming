@@ -99,7 +99,7 @@ class Rectangle(Base):
             list_args = ['id', 'width', 'height', 'x', 'y']
             for arg in range(len(args)):
                 setattr(self, list_args[arg], args[arg])
-        elif kwargs:
+        else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
 
