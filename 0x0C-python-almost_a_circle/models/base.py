@@ -29,7 +29,7 @@ class Base:
         if list_objs is not None:
             for o in list_objs:
                 list_objs = [o.to_dictionary()]
-        with open("{}.json".format(cls.__name__), "w") as file:
+        with open("{}.json".format(cls.__name__), "w", encoding="utf-8") as file:
             file.write(cls.to_json_string(list_objs))
 
     @staticmethod
