@@ -1,2 +1,2 @@
-const headerElement = document.querySelector('header');
+let headerElement = document.querySelector('header');
 headerElement.style.color = '#FF0000';
